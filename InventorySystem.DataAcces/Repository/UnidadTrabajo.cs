@@ -11,23 +11,23 @@ namespace InventorySystem.DataAcces.Repository
     public class UnidadTrabajo : IUnidadTrabajo
     {
         private readonly ApplicationDbContext _db;
-        public IBodegaRepository Bodega { get; set; }
+        public IBodegaRepository Bodega { get; private set; }
 
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
+            Bodega = new BodegaRepository(_db);
         }
 
-        public IBodegaRepository Bodega => throw new NotImplementedException();
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _db.Dispose();
         }
 
-        public Task Guardar()
+        public async Task Guardar()
         {
-            throw new NotImplementedException();
+            await _db.SaveChangesAsync();
         }
     }
 }

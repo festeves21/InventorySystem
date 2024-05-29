@@ -12,7 +12,7 @@ namespace InventorySystem.DataAcces.Data
         {
         }
 
-        public DbSet<Bodega> Bodegas { get; set; }
+        public DbSet<Bodega> Bodega { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -70,7 +70,7 @@ namespace InventorySystem.DataAcces.Repository
             if (!isTracking) {
                 query = query.AsNoTracking();
             }
-
+            
             return await query.ToListAsync();
 
         }
